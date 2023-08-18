@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Chrome HomePage</title>
+  <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+  <div>
+    <div class="hero">
+      
+      <div class="status-container">
+        <h3>Status: </h3>
+        <p id="status-text">Loading...</p>
+      </div>
+
+      <div class="floating-container">
+        <div class="element-container">
+          <span class="float-element tooltip-left" id="toggleSymbolArticle">
+            <i class="material-icons">article</i>
+          </span>
+          <span class="float-element toggle-photo" id="toggleSymbolPhoto">
+            <i class="material-icons">photo</i>
+          </span>
+          <span class="float-element" id="toggleSymbolRain">
+            <i class="material-icons">water</i>
+          </span>
+        </div>
+        <!-- <div class="floating-button" id="toggleSymbol">☰</div>  -->
+        <div class="floating-button" id="toggleSymbol">
+          <img src="images/icons8-circled-menu-48.png" alt="Menu Icon">
+        </div>
+
+      </div>
+      <input type="file" id="imageInput" accept="image/*" style="display: none;">
+
+
+      <div class="rain"></div>
+      <!-- <div class="thunder"></div> -->
+      <div class="newscontainer">
+        <iframe id="newsFrame" class="News" src="https://www.news9live.com/" width="300px" height="306px"
+          frameborder="0"></iframe>
+      </div>
+      <div class="heroo">
+        <button id="addNoteButton">+</button>
+        <div id="stickyNotesContainer"></div>
+      </div>
+      <div id="search-container">
+        <div id="search-input-container">
+          <img src="https://assets.codepen.io/1468070/Google+G+Icon.png" alt="" />
+          <input type="text" onkeypress="handleKeyPress(event);" placeholder="Search anything" id="search" />
+        </div>
+
+        <button id="image-button" onclick="googleSearch();" type="button">
+          <i class="fa-regular fa-search"></i>
+        </button>
+
+        <button id="mic-button" onclick="googleVoiceSearch();" type="button">
+          <i class="fa-regular fa-microphone"></i>
+        </button>
+        <div id="speech-output"></div>
+      </div>
+
+      <div class="social-buttons" id="social-buttons">
+        <a href="https://www.instagram.com/accounts/login/" class="social-button social-button--instagram"
+          aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/" class="social-button social-button--youtube" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com/login/" class="social-button social-button--facebook" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://in.linkedin.com/?src=go-pa&trk=sem-ga_campid.14650114788_asid.151761418307_crid.657403558721_kw.linkedin%20login_d.c_tid.kwd-12704335873_n.g_mt.e_geo.1007828&mcid=6844056167778418689&cid=&gclid=CjwKCAjw_uGmBhBREiwAeOfsd72MVZ5yKtvYvYPHM_hRBXziPSNXhi2mRG5MwNpM1ilAP8I_pMayNBoCjOoQAvD_BwE&gclsrc=aw.ds"
+          class="social-button social-button--linkedin" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/login" class="social-button social-button--github" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.google.com/gmail" class="social-button social-button--gmail" aria-label="Gmail">
+          <i class="far fa-envelope"></i>
+        </a>
+        <a href="https://web.whatsapp.com/" class="social-button social-button--whatsapp" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="shortcut-container">
+        <div class="shortcut" id="add-shortcut">
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+      <div class="container">
+        <div class="clock">
+          <span id="hrs"> </span>
+          <span>:</span>
+          <span id="min"> </span>
+          <span>:</span>
+          <span id="sec"> </span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="weather">
+          <div class="icon-temp-wrapper">
+            <img src="images/rain.png" class="weather-icon">
+            <h1 class="temp"> </h1>
+          </div>
+          <h2 class="city"> </h2>
+          <div class="details">
+            <div class="col1">
+              <img src="images/humidity.png">
+              <div>
+                <p class="humidity">50%</p>
+                <p>Humidity</p>
+              </div>
+            </div>
+            <div class="col2">
+              <img src="images/wind.png">
+              <div>
+                <p class="wind">15km/hr</p>
+                <p>Wind Speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="JavaScript/weatherAnimation.js"></script>
+    <script src="JavaScript/clock.js"></script>
+    <script src="JavaScript/search.js"></script>
+    <script src="JavaScript/note.js"></script>
+    <script src="JavaScript/background.js"></script>
+    <script src="JavaScript/weather.js"></script>
+    <script src="JavaScript/shortcut.js"></script>
+    <script src="JavaScript/rain.js"></script>
+    <script src="JavaScript/news.js"></script>
+    <script src="JavaScript/status.js"></script>
+</body>
+
+</html>
