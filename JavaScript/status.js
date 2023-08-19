@@ -1,6 +1,8 @@
 const statusText = document.getElementById("status-text");
 
-fetch("http://localhost:3000/api/checkMongoDBStatus")
+const renderAppUrl = 'https://chromehome.onrender.com';
+
+fetch(`${renderAppUrl}/api/checkMongoDBStatus`)
   .then((response) => response.json())
   .then((data) => {
     if (data.status === "on") {
