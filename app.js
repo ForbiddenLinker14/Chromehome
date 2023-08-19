@@ -27,7 +27,7 @@ app.post("/api/uploadImage", upload.single("image"), async (req, res) => {
     console.log("Received image data:", imageBuffer);
 
     // Delete the previously saved image
-    await Image.deleteMany({}); // This will delete all documents in the Image collection
+    await Image.deleteMany({}, { timeout: 30000 }); // This will delete all documents in the Image collection
 
     const savedImage = await Image.create({ imageURL: imageBuffer });
     // const savedImage = await Image.create({ imageURL: "images/" });
