@@ -34,13 +34,12 @@ const path = require("path");
 const app = express();
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://anitsaha976:zuzFOFhJY5EYscLA@cluster0.6nmeso4.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const dbConnectionString = "mongodb+srv://anitsaha976:zuzFOFhJY5EYscLA@cluster0.6nmeso4.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(dbConnectionString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const imageSchema = new mongoose.Schema({
   imageURL: String,
