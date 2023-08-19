@@ -896,3 +896,10 @@ button:hover {
   color: whitesmoke;
   opacity: 0.5;
 }
+
+.custom-render-icon {
+  background-image: url('images/render.png');
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
