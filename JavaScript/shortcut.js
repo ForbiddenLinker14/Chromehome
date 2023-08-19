@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return "fab fa-envelope";
     } else if (url.includes("stackoverflow")) {
       return "fab fa-stack-overflow";
+    } else if (url.includes("render.com")) {
+      return "custom-render-icon";
     } else if (url.includes("wikipedia")) {
       return "fab fa-wikipedia-w";
     } else if (url.includes("www.mastercard")) {
